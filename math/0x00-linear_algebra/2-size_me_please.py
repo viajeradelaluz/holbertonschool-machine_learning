@@ -6,8 +6,7 @@ def matrix_shape(matrix):
     - The shape should be returned as a list of integers
     """
     shape = []
-    while type(matrix) == list:
-        print(f"matrix: {matrix}")
+    while type(matrix) == list and len(matrix) != 0:
         shape.append(len(matrix))
         matrix = matrix[0]
     return shape
