@@ -13,7 +13,7 @@ def cat_matrices2D(mat1, mat2, axis=0):
     if axis == 0:  # concatenate along rows
         if len(mat1[0]) == len(mat2[0]):
             return mat1 + mat2
-    else: # concatenate along columns
+    else:  # concatenate along columns
         if len(mat1) == len(mat2):
             return [x + y for x, y in zip(mat1, mat2)]
     return None
