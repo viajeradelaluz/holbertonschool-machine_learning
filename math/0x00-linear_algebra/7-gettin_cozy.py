@@ -10,11 +10,10 @@ Write a function that concatenates two matrices along a specific axis:
 
 def cat_matrices2D(mat1, mat2, axis=0):
     """Concatenate two matrices along a specific axis."""
-    if len(mat1) != len(mat2) and axis != 0:
-        return None
-
     if axis == 0:  # concatenate along rows
-        return mat1 + mat2
-
-    if axis == 1:  # concatenate along columns
-        return [mat1[i] + mat2[i] for i in range(len(mat1))]
+        if len(mat1[0]) == len(mat2[0]):
+            return mat1 + mat2
+    else: # concatenate along columns
+        if len(mat1) == len(mat2):
+            return [x + y for x, y in zip(mat1, mat2)]
+    return None
