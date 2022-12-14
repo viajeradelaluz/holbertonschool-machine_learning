@@ -1,22 +1,6 @@
 #!/usr/bin/env python3
 """
-Create a class Poisson that represents a poisson distribution:
-- Class contructor def __init__(self, data=None, lambtha=1.):
-  - `data` is a list of the data to be used to estimate the distribution
-  - `lambtha` is the expected number of occurences in a given time frame
-  - Sets the instance attribute `lambtha`
-    - Saves `lambtha` as a float
-  - If `data` is not given, i.e. None (be careful: `not data` has not the same
-  result as `data is None`):
-    - Use the given `lambtha`
-    - If `lambtha` is not a positive value or equals to 0, raise a `ValueError`
-    with the message `lambtha must be a positive value`
-  - If `data` is given:
-    - Calculate the `lambtha` of `data`
-    - If `data` is not a list, raise a TypeError with the message
-    `data must be a list`
-    - If `data` does not contain at least two data points, raise a `ValueError`
-    with the message `data must contain multiple values`
+Class that represents a poisson distribution.
 """
 
 
@@ -24,7 +8,11 @@ class Poisson:
     """Poisson distribution"""
 
     def __init__(self, data=None, lambtha=1.0):
-        """Class constructor"""
+        """Poisson distribution constructor
+
+        :param data: list of the data to be used to estimate the distribution
+        :param lambtha: expected number of occurences in a given time frame
+        """
         if data is None:
             if lambtha <= 0:
                 raise ValueError("lambtha must be a positive value")
@@ -35,3 +23,17 @@ class Poisson:
             if len(data) < 2:
                 raise ValueError("data must contain multiple values")
             self.lambtha = float(sum(data) / len(data))
+
+    def pmf(self, k):
+        """Calculates the PMF for a given number of successes."""
+        if not isinstance(k, int):
+            k = int(k)
+        if k < 0:
+            return 0
+
+        # Ref. [Distribución de Poisson](https://youtu.be/PMX75m4-s9A)
+        e = 2.7182818285
+        k_factorial = 1
+        for i in range(1, k + 1):
+            k_factorial *= i
+        return (e**-self.lambtha) * (self.lambtha**k) / k_factorial
