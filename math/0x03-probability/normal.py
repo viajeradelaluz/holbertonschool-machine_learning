@@ -46,3 +46,14 @@ class Normal:
         dy = self.e ** (-((x - self.mean) ** 2) / (2 * self.stddev**2))
         dx = self.stddev * ((2 * self.pi) ** 0.5)
         return dy / dx
+
+    def erf(self, x):
+        """Calculates the error function for a given x-value."""
+        d = 2 / (self.pi**0.5)
+        dz = x - (x**3 / 3) + (x**5 / 10) - (x**7 / 42) + (x**9 / 216)
+        return d * dz
+
+    def cdf(self, x):
+        """Calculates the CDF value for a given x-value."""
+        z = self.z_score(x)
+        return (1 + self.erf(z / (2**0.5))) / 2
