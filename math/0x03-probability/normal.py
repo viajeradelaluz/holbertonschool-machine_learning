@@ -7,6 +7,9 @@ Class that represents a normal distribution.
 class Normal:
     """Normal distribution class."""
 
+    e = 2.7182818285
+    pi = 3.1415926536
+
     def __init__(self, data=None, mean=0.0, stddev=1.0):
         """Normal distribution class constructor.
 
@@ -35,3 +38,11 @@ class Normal:
     def x_value(self, z):
         """Calculates the x-value of a given z-score."""
         return z * self.stddev + self.mean
+
+    def pdf(self, x):
+        """Calculates the PDF value for a given x-value."""
+
+        # Calculation with standard deviation and mean
+        dy = self.e ** (-((x - self.mean) ** 2) / (2 * self.stddev**2))
+        dx = self.stddev * ((2 * self.pi) ** 0.5)
+        return dy / dx
