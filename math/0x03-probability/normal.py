@@ -4,9 +4,6 @@ Class that represents a normal distribution.
 """
 
 
-from distutils.command import sdist
-
-
 class Normal:
     """Normal distribution class."""
 
@@ -29,4 +26,4 @@ class Normal:
                 raise ValueError("data must contain multiple values")
             self.mean = sum(data) / len(data)
             sd = sum([(x - self.mean) ** 2 for x in data]) / len(data)
-            self.stddev = sd ** 0.5
+            self.stddev = sd**0.5
