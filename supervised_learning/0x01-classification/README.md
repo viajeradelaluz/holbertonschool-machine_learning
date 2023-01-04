@@ -111,3 +111,24 @@ Traceback (most recent call last):
 AttributeError: can't set attribute
 alexa@ubuntu-xenial:$
 ```
+
+### 2. Neuron Forward Propagation
+
+- Write a class `Neuron` that defines a single neuron performing binary classification (Based on `1-neuron.py`):
+
+- Main file: `2-main.py`
+- Add the public method `def forward_prop(self, X)`:
+  - Calculates the forward propagation of the neuron
+  - `X` is a `numpy.ndarray` with shape (`nx`, `m`) that contains the input data
+    - `nx` is the number of input features to the neuron
+    - `m` is the number of examples
+  - Updates the private attribute `__A`
+  - The neuron should use a sigmoid activation function
+  - Returns the private attribute `__A`
+
+```bash
+alexa@ubuntu-xenial:$ ./2-main.py
+[[5.34775247e-10 7.24627778e-04 4.52416436e-07 ... 8.75691930e-05
+  1.13141966e-06 6.55799932e-01]]
+alexa@ubuntu-xenial:$
+```
