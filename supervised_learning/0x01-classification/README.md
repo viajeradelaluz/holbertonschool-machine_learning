@@ -701,6 +701,24 @@ True
 alexa@ubuntu-xenial:$
 ```
 
+### 19. DeepNeuralNetwork Cost
+
+Write a class `DeepNeuralNetwork` that defines a deep neural network performing binary classification (based on `18-deep_neural_network.py`):
+
+- Main file: `19-main.py`
+- Add the public method `def cost(self, Y, A)`:
+  - Calculates the cost of the model using logistic regression
+  - `Y` is a `numpy.ndarray` with shape (1, `m`) that contains the correct labels for the input data
+  - `A` is a `numpy.ndarray` with shape (1, `m`) containing the activated output of the neuron for each example
+  - To avoid division by zero errors, please use `1.0000001 - A` instead of `1 - A`
+  - Returns the cost
+
+```bash
+alexa@ubuntu-xenial:$ ./19-main.py
+0.6958649419170609
+alexa@ubuntu-xenial:$
+```
+
 ```bash
 
 ```
