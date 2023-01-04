@@ -372,3 +372,33 @@ Traceback (most recent call last):
 AttributeError: can't set attribute
 alexa@ubuntu-xenial:$
 ```
+
+### 10. NeuralNetwork Forward Propagation
+
+Write a class `NeuralNetwork` that defines a neural network with one hidden layer performing binary classification (based on `9-neural_network.py`):
+
+- Main file: `10-main.py`
+- Add the public method `def forward_prop(self, X)`:
+  - Calculates the forward propagation of the neural network
+  - `X` is a `numpy.ndarray` with shape (`nx`, `m`) that contains the input data
+    - `nx` is the number of input features to the neuron
+    - `m` is the number of examples
+  - Updates the private attributes `__A1` and `__A2`
+  - The neurons should use a sigmoid activation function
+  - Returns the private attributes `__A1` and `__A2`, respectively
+
+```bash
+alexa@ubuntu-xenial:$ ./10-main.py
+[[5.34775247e-10 7.24627778e-04 4.52416436e-07 ... 8.75691930e-05
+  1.13141966e-06 6.55799932e-01]
+ [9.99652394e-01 9.99999995e-01 6.77919152e-01 ... 1.00000000e+00
+  9.99662771e-01 9.99990554e-01]
+ [5.57969669e-01 2.51645047e-02 4.04250047e-04 ... 1.57024117e-01
+  9.97325173e-01 7.41310459e-02]]
+[[0.23294587 0.44286405 0.54884691 ... 0.38502756 0.12079644 0.593269  ]]
+alexa@ubuntu-xenial:$
+```
+
+```bash
+
+```
