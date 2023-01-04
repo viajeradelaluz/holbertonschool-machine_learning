@@ -654,6 +654,53 @@ AttributeError: can't set attribute
 alexa@ubuntu-xenial:$
 ```
 
+### 18. DeepNeuralNetwork Forward Propagation
+
+Write a class `DeepNeuralNetwork` that defines a deep neural network performing binary classification (based on `17-deep_neural_network.py`):
+
+- Main file: `18-main.py`
+- Add the public method `def forward_prop(self, X)`:
+  - Calculates the forward propagation of the neural network
+  - `X` is a `numpy.ndarray` with shape (`nx`, `m`) that contains the input data
+    - `nx` is the number of input features to the neuron
+    - `m` is the number of examples
+  - Updates the private attribute `__cache`:
+    - The activated outputs of each layer should be saved in the `__cache` dictionary using the key `A{l}` where `{l}` is the hidden layer the activated output belongs to
+    - `X` should be saved to the `cache` dictionary using the key `A0`
+  - All neurons should use a sigmoid activation function
+  - You are allowed to use one loop
+    -Returns the output of the neural network and the cache, respectively
+
+```bash
+alexa@ubuntu-xenial:$ ./18-main.py
+[[0.75603476 0.7516025  0.75526716 ... 0.75228888 0.75522853 0.75217069]]
+{'A1': array([[0.4678435 , 0.64207147, 0.55271425, ..., 0.61718097, 0.56412986,
+        0.72751504],
+       [0.79441392, 0.87140579, 0.72851107, ..., 0.8898201 , 0.79466389,
+        0.82257068],
+       [0.72337339, 0.68239373, 0.63526533, ..., 0.7036234 , 0.7770501 ,
+        0.69465346],
+       [0.65305735, 0.69829955, 0.58646313, ..., 0.73949722, 0.52054315,
+        0.73151973],
+       [0.67408798, 0.69624537, 0.73084352, ..., 0.70663173, 0.76204175,
+        0.72705428]]), 'A3': array([[0.75603476, 0.7516025 , 0.75526716, ..., 0.75228888, 0.75522853,
+        0.75217069]]), 'A0': array([[0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       ...,
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.]], dtype=float32), 'A2': array([[0.75067742, 0.78319533, 0.77755571, ..., 0.77891002, 0.75847839,
+        0.78517215],
+       [0.70591081, 0.71159364, 0.7362214 , ..., 0.70845465, 0.72133875,
+        0.71090691],
+       [0.72032379, 0.69519095, 0.72414599, ..., 0.70067751, 0.71161433,
+        0.70420437]])}
+True
+True
+alexa@ubuntu-xenial:$
+```
+
 ```bash
 
 ```
