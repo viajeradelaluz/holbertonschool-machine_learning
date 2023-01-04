@@ -200,3 +200,38 @@ alexa@ubuntu-xenial:$ ./5-main.py
 0.2579495783615682
 alexa@ubuntu-xenial:$
 ```
+
+### 6. Train Neuron
+
+Write a class `Neuron` that defines a single neuron performing binary classification (Based on `5-neuron.py`):
+
+- Main file: `6-main.py`
+- Add the public method `def train(self, X, Y, iterations=5000, alpha=0.05)`:
+  - Trains the neuron
+    - `X` is a `numpy.ndarray` with shape (nx, `m`) that contains the input data
+      - `nx` is the number of input features to the neuron
+      - `m` is the number of examples
+    - `Y` is a `numpy.ndarray` with shape (1, `m`) that contains the correct labels for the input data
+    - `iterations` is the number of iterations to train over
+      - if `iterations` is not an integer, raise a `TypeError` with the exception `iterations must be an integer`
+      - if `iterations` is not positive, raise a `ValueError` with the exception `iterations must be a positive integer`
+    - `alpha` is the learning rate
+      - if `alpha` is not a float, raise a `TypeError` with the exception `alpha must be a float`
+      - if `alpha` is not positive, raise a `ValueError` with the exception `alpha must be positive`
+    - All exceptions should be raised in the order listed above
+    - Updates the private attributes `__W`, `__b`, and `__A`
+    - You are allowed to use one loop
+    - Returns the evaluation of the training data after `iterations` of training have occurred
+
+```bash
+alexa@ubuntu-xenial:$ ./6-main.py
+Train cost: 1.3805076999
+Train accuracy: 64.737465456%
+Train data: [[0 0 0 ... 0 0 1]]
+Train Neuron A: [[2.70000000e-08 2.18229559e-01 1.63492900e-04 ... 4.66530830e-03
+  6.06518000e-05 9.73817942e-01]]
+Dev cost: 1.4096194345
+Dev accuracy: 64.4917257683%
+Dev data: [[1 0 0 ... 0 0 1]]
+Dev Neuron A: [[0.85021134 0.         0.3526692  ... 0.10140937 0.         0.99555018]]
+```
