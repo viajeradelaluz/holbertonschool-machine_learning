@@ -471,6 +471,14 @@ alexa@ubuntu-xenial:$ ./13-main.py
 alexa@ubuntu-xenial:$
 ```
 
+### 14. Train NeuralNetwork
+
+Write a class `NeuralNetwork` that defines a neural network with one hidden layer performing binary classification (based on `13-neural_network.py`):
+
+```bash
+
+```
+
 ```bash
 
 ```
