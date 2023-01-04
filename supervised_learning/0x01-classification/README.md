@@ -719,6 +719,28 @@ alexa@ubuntu-xenial:$ ./19-main.py
 alexa@ubuntu-xenial:$
 ```
 
+### 20. Evaluate DeepNeuralNetwork
+
+Write a class `DeepNeuralNetwork` that defines a deep neural network performing binary classification (based on `19-deep_neural_network.py`):
+
+- Main file: `20-main.py`
+- Add the public method `def evaluate(self, X, Y)`:
+  - Evaluates the neuron's predictions
+  - `X` is a `numpy.ndarray` with shape (`nx`, `m`) that contains the input data
+    - `nx` is the number of input features to the neuron
+    - `m` is the number of examples
+  - `Y` is a `numpy.ndarray` with shape (1, `m`) that contains the correct labels for the input data
+  - Returns the neuron’s prediction and the cost of the network, respectively
+    - The prediction should be a `numpy.ndarray` with shape (1, `m`) containing the predicted labels for each example
+    - The label values should be 1 if the output of the network is >= 0.5 and 0 otherwise
+
+```bash
+alexa@ubuntu-xenial:$ ./20-main.py
+[[1 1 1 ... 1 1 1]]
+0.6958649419170609
+alexa@ubuntu-xenial:$
+```
+
 ```bash
 
 ```
