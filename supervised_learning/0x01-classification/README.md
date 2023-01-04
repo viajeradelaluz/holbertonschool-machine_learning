@@ -235,3 +235,54 @@ Dev accuracy: 64.4917257683%
 Dev data: [[1 0 0 ... 0 0 1]]
 Dev Neuron A: [[0.85021134 0.         0.3526692  ... 0.10140937 0.         0.99555018]]
 ```
+
+### 7. Upgrade Train Neuron
+
+Write a class Neuron that defines a single neuron performing binary classification (Based on `6-neuron.py`):
+
+- Main file: `7-main.py`
+- Update the public method train to `def train(self, X, Y, iterations=5000, alpha=0.05, verbose=True, graph=True, step=100)`:
+  - Trains the neuron by updating the private attributes `__W`, `__b`, and `__A`
+  - `X` is a `numpy.ndarray` with shape (nx, `m`) that contains the input data
+    - `nx` is the number of input features to the neuron
+    - `m` is the number of examples
+  - `Y` is a `numpy.ndarray` with shape (1, `m`) that contains the correct labels for the input data
+  - `iterations` is the number of iterations to train over
+    - if `iterations` is not an integer, raise a `TypeError` with the exception `iterations must be an integer`
+    - if `iterations` is not positive, raise a `ValueError` with the exception `iterations must be a positive integer`
+  - `alpha` is the learning rate
+    - if `alpha` is not a float, raise a `TypeError` with the exception `alpha must be a float`
+    - if `alpha` is not positive, raise a `ValueError` with the exception `alpha must be positive`
+  - `verbose` is a boolean that defines whether or not to print information about the training. If `True`, print `Cost after {iteration} iterations: {cost}` every `step` iterations:
+    - Include data from the 0th and last iteration
+  - `graph` is a boolean that defines whether or not to graph information about the training once the training has completed. If `True`:
+    - Plot the training data every `step` iterations as a blue line
+    - Label the x-axis as `iteration`
+    - Label the y-axis as `cost`
+    - Title the plot `Training Cost`
+    - Include data from the 0th and last iteration
+  - Only if either `verbose` or `graph` are `True`:
+    - if `step` is not an integer, raise a `TypeError` with the exception `step must be an integer`
+    - if `step` is not positive or is greater than iterations, raise a `ValueError` with the exception `step must be positive and <= iterations`
+  - All exceptions should be raised in the order listed above
+  - The 0th iteration should represent the state of the neuron before any training has occurred
+  - You are allowed to use one loop
+  - You can use `import matplotlib.pyplot as plt`
+  - Returns: the evaluation of the training data after `iterations` of training have occurred
+
+```bash
+alexa@ubuntu-xenial:$ ./7-main.py
+Cost after 0 iterations: 4.365104944262272
+Cost after 100 iterations: 0.11955134491351888
+
+...
+
+Cost after 3000 iterations: 0.013386353289868338
+
+...
+
+Train cost: 0.013386353289868338
+Train accuracy: 99.66837741808132%
+Dev cost: 0.010803484515167197
+Dev accuracy: 99.81087470449172%
+```
