@@ -475,8 +475,31 @@ alexa@ubuntu-xenial:$
 
 Write a class `NeuralNetwork` that defines a neural network with one hidden layer performing binary classification (based on `13-neural_network.py`):
 
-```bash
+- Main file: `14-main.py`
+- Add the public method `def train(self, X, Y, iterations=5000, alpha=0.05)`:
+  - Trains the neural network
+    - `X` is a `numpy.ndarray` with shape (`nx`, `m`) that contains the input data
+      - `nx` is the number of input features to the neuron
+      - `m` is the number of examples
+    - `Y` is a `numpy.ndarray` with shape (1, `m`) that contains the correct labels for the input data
+    - `iterations` is the number of iterations to train over
+      - if `iterations` is not an integer, raise a `TypeError` with the exception `iterations must be an integer`
+      - if `iterations` is not positive, raise a `ValueError` with the exception `iterations must be a positive integer`
+    - `alpha` is the learning rate
+      - if `alpha` is not a float, raise a `TypeError` with the exception `alpha must be a float`
+      - if `alpha` is not positive, raise a `ValueError` with the exception `alpha must be positive`
+    - All exceptions should be raised in the order listed above
+    - Updates the private attributes `__W1`, `__b1`, `__A1`, `__W2`, `__b2`, and `__A2`
+    - You are allowed to use one loop
+    - Returns the evaluation of the training data after `iterations` of training have occurred
 
+```bash
+alexa@ubuntu-xenial:$ ./14-main.py
+Train cost: 0.4680930945144984
+Train accuracy: 84.69009080142123%
+Dev cost: 0.45985938789496067
+Dev accuracy: 86.52482269503547%
+alexa@ubuntu-xenial:$
 ```
 
 ```bash
