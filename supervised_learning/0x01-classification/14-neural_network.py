@@ -4,7 +4,6 @@ Module that defines a neural network with one hidden layer performing binary
 classification.
 """
 
-import matplotlib.pyplot as plt
 import numpy as np
 
 
