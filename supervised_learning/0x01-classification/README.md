@@ -172,3 +172,31 @@ alexa@ubuntu-xenial:$ ./4-main.py
 4.365104944262272
 alexa@ubuntu-xenial:$
 ```
+
+### 5. Neuron Gradient Descent
+
+Write a class Neuron that defines a single neuron performing binary classification (Based on `4-neuron.py`):
+
+- Main file: `5-main.py`
+- Add the public method `def gradient_descent(self, X, Y, A, alpha=0.05)`:
+  - Calculates one pass of gradient descent on the neuron
+  - `X` is a `numpy.ndarray` with shape (nx, `m`) that contains the input data
+    - `nx` is the number of input features to the neuron
+    - `m` is the number of examples
+  - `Y` is a `numpy.ndarray` with shape (1, `m`) that contains the correct labels for the input data
+  - `A` is a `numpy.ndarray` with shape (1, `m`) containing the activated output of the neuron for each example
+  - `alpha` is the learning rate
+  - Updates the private attributes `__W` and `__b`
+
+```bash
+alexa@ubuntu-xenial:$ ./5-main.py
+[[ 1.76405235e+00  4.00157208e-01  9.78737984e-01  2.24089320e+00
+   1.86755799e+00 -9.77277880e-01  9.50088418e-01 -1.51357208e-01
+
+...
+
+  -5.85865511e-02 -3.17543094e-01 -1.63242330e+00 -6.71341546e-02
+   1.48935596e+00  5.21303748e-01  6.11927193e-01 -1.34149673e+00]]
+0.2579495783615682
+alexa@ubuntu-xenial:$
+```
