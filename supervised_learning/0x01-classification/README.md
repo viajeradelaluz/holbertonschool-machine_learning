@@ -741,6 +741,42 @@ alexa@ubuntu-xenial:$ ./20-main.py
 alexa@ubuntu-xenial:$
 ```
 
+### 21. DeepNeuralNetwork Gradient Descent
+
+Write a class `DeepNeuralNetwork` that defines a deep neural network performing binary classification (based on `20-deep_neural_network.py`):
+
+- Main file: `21-main.py`
+- Add the public method `def gradient_descent(self, Y, cache, alpha=0.05)`:
+  - Calculates one pass of gradient descent on the neural network
+  - `Y` is a `numpy.ndarray` with shape (1, `m`) that contains the correct labels for the input data
+  - `cache` is a dictionary containing all the intermediary values of the network
+  - `alpha` is the learning rate
+  - Updates the private attribute `__weights`
+  - You are allowed to use one loop
+
+```bash
+alexa@ubuntu-xenial:$ ./21-main.py
+{'b3': array([[0.00659936]]), 'b2': array([[-0.00055419],
+       [ 0.00032369],
+       [ 0.0007201 ]]), 'W2': array([[ 0.4586347 ,  0.55968571, -1.22435332, -0.09516874,  0.57668454],
+       [-0.16209305,  0.06902405, -0.9460547 , -0.30329296,  1.15722071],
+       [-0.49595566, -0.91068385,  0.09382566,  0.49948968,  0.75647764]]), 'b1': array([[-1.01835520e-03],
+       [-1.22929756e-04],
+       [ 9.25521878e-05],
+       [ 1.07730873e-04],
+       [ 2.29014796e-04]]), 'W3': array([[-0.41262664,  0.18889024,  0.44717929]]), 'W1': array([[ 0.0890981 ,  0.02021099,  0.04943373, ...,  0.02632982,
+         0.03090699, -0.06775582],
+       [ 0.02408701,  0.00749784,  0.02672082, ...,  0.00484894,
+        -0.00227857,  0.00399625],
+       [ 0.04295829, -0.04238217, -0.05110231, ..., -0.00364861,
+         0.01571416, -0.05446546],
+       [ 0.05361891, -0.05984585, -0.09117898, ..., -0.03094292,
+        -0.01925805, -0.06308145],
+       [-0.01667953, -0.04216413,  0.06239623, ..., -0.02024521,
+        -0.05159656, -0.02373981]])}
+alexa@ubuntu-xenial:$
+```
+
 ```bash
 
 ```
