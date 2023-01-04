@@ -439,6 +439,38 @@ alexa@ubuntu-xenial:$ ./12-main.py
 alexa@ubuntu-xenial:$
 ```
 
+### 13. NeuralNetwork Gradient Descent
+
+Write a class `NeuralNetwork` that defines a neural network with one hidden layer performing binary classification (based on `12-neural_network.py`):
+
+- Main file: `13-main.py`
+- Add the public method `def gradient_descent(self, X, Y, A1, A2, alpha=0.05)`:
+  - Calculates one pass of gradient descent on the neural network
+  - `X` is a `numpy.ndarray` with shape (nx, `m`) that contains the input data
+    - `nx` is the number of input features to the neuron
+    - `m` is the number of examples
+  - `Y` is a `numpy.ndarray` with shape (1, `m`) that contains the correct labels for the input data
+  - `A1` is the output of the hidden layer
+  - `A2` is the predicted output
+  - `alpha` is the learning rate
+  - Updates the private attributes `__W1`, `__b1` `__W2`, and `__b2`
+
+```bash
+alexa@ubuntu-xenial:$ ./13-main.py
+[[ 1.76405235  0.40015721  0.97873798 ...  0.52130375  0.61192719
+  -1.34149673]
+ [ 0.47689837  0.14844958  0.52904524 ...  0.0960042  -0.0451133
+   0.07912172]
+ [ 0.85053068 -0.83912419 -1.01177408 ... -0.07223876  0.31112445
+  -1.07836109]]
+[[ 0.003193  ]
+ [-0.01080922]
+ [-0.01045412]]
+[[ 1.06583858 -1.06149724 -1.79864091]]
+[[0.15552509]]
+alexa@ubuntu-xenial:$
+```
+
 ```bash
 
 ```
