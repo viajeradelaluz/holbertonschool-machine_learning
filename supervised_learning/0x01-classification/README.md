@@ -399,6 +399,24 @@ alexa@ubuntu-xenial:$ ./10-main.py
 alexa@ubuntu-xenial:$
 ```
 
+### 11. NeuralNetwork Cost
+
+Write a class `NeuralNetwork` that defines a neural network with one hidden layer performing binary classification (based on `10-neural_network.py`):
+
+- Main file: `11-main.py`
+- Add the public method `def cost(self, Y, A)`:
+  - Calculates the cost of the model using logistic regression
+  - `Y` is a `numpy.ndarray` with shape (1, `m`) that contains the correct labels for the input data
+  - `A` is a `numpy.ndarray` with shape (1, `m`) containing the activated output of the neuron for each example
+  - To avoid division by zero errors, please use `1.0000001 - A` instead of `1 - A`
+  - Returns the cost
+
+```bash
+alexa@ubuntu-xenial:$ ./11-main.py
+0.7917984405648548
+alexa@ubuntu-xenial:$
+```
+
 ```bash
 
 ```
