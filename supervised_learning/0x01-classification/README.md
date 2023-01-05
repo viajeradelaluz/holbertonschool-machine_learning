@@ -884,6 +884,18 @@ alexa@ubuntu-xenial:$ ./24-main.py
 alexa@ubuntu-xenial:$
 ```
 
-```bash
+### 25. One-Hot Decode
 
+Write a function `def one_hot_decode(one_hot)`: that converts a one-hot matrix into a vector of labels:
+
+- `one_hot` is a one-hot encoded `numpy.ndarray` with shape (`classes`, `m`)
+  - `classes` is the maximum number of classes
+  - `m` is the number of examples
+- Returns: a `numpy.ndarray` with shape (m, ) containing the numeric labels for each example, or `None` on failure
+
+```bash
+alexa@ubuntu-xenial:$ ./25-main.py
+[5 0 4 1 9 2 1 3 1 4]
+[5 0 4 1 9 2 1 3 1 4]
+alexa@ubuntu-xenial:$
 ```
