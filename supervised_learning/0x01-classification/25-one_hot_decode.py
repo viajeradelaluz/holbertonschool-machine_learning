@@ -11,7 +11,7 @@ def one_hot_decode(one_hot):
     :param one_hot: a one-hot encoded np array with shape (classes, m)
     return: a np array with shape (m,) or None on failure
     """
-    if not isinstance(one_hot, np.ndarray):
+    if not isinstance(one_hot, np.ndarray) or one_hot.shape < (2, 2):
         return None
 
     try:
