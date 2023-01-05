@@ -168,7 +168,7 @@ class DeepNeuralNetwork:
         :param filename: file to which the object should be saved
         :return: nothing
         """
-        if filename[-4:] != ".pkl":
+        if not filename.endswith(".pkl"):
             filename += ".pkl"
 
         with open(filename, "wb") as f:
