@@ -168,6 +168,9 @@ class DeepNeuralNetwork:
         :param filename: file to which the object should be saved
         :return: nothing
         """
+        if not isinstance(filename, str):
+            return None
+
         if not filename.endswith(".pkl"):
             filename += ".pkl"
 
