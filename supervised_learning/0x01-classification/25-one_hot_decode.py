@@ -11,10 +11,10 @@ def one_hot_decode(one_hot):
     :param one_hot: a one-hot encoded np array with shape (classes, m)
     return: a np array with shape (m,) or None on failure
     """
-    if not isinstance(one_hot, np.ndarray):
+    if not isinstance(one_hot, np.ndarray) or len(one_hot.shape) != 2:
         return None
 
     try:
-        return np.argmax(one_hot.T, axis=1)
+        return np.argmax(one_hot, axis=0)
     except Exception:
         return None
