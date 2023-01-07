@@ -25,7 +25,7 @@ Write the function `def create_placeholders(nx, classes)`: that returns two plac
   - `x` is the placeholder for the input data to the neural network
   - `y` is the placeholder for the one-hot labels for the input data
 
-## Layers
+## 1. Layers
 
 Write the function `def create_layer(prev, n, activation)`:
 
@@ -36,3 +36,14 @@ Write the function `def create_layer(prev, n, activation)`:
 - use `tf.keras.initializers.VarianceScaling(mode='fan_avg')` to implement `He et. al` initialization for the layer weights
 - each layer should be given the name `layer`
 - Returns: the tensor output of the layer
+
+## 2. Forward Propagation
+
+Write the function `def forward_prop(x, layer_sizes=[], activations=[])`: that creates the forward propagation graph for the neural network:
+
+- Main file: `2-main.py`
+- `x` is the placeholder for the input data
+- `layer_sizes` is a list containing the number of nodes in each layer of the network
+- `activations` is a list containing the activation functions for each layer of the network
+- Returns: the prediction of the network in tensor form
+- For this function, you should import your `create_layer` function with `create_layer = **import**('1-create_layer').create_layer`
