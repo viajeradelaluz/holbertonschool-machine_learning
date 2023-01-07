@@ -24,3 +24,15 @@ Write the function `def create_placeholders(nx, classes)`: that returns two plac
 - Returns: placeholders named `x` and `y`, respectively
   - `x` is the placeholder for the input data to the neural network
   - `y` is the placeholder for the one-hot labels for the input data
+
+## Layers
+
+Write the function `def create_layer(prev, n, activation)`:
+
+- Main file: `1-main.py`
+- `prev` is the tensor output of the previous layer
+- `n` is the number of nodes in the layer to create
+- `activation` is the activation function that the layer should use
+- use `tf.keras.initializers.VarianceScaling(mode='fan_avg')` to implement `He et. al` initialization for the layer weights
+- each layer should be given the name `layer`
+- Returns: the tensor output of the layer
