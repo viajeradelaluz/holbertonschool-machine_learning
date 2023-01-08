@@ -113,3 +113,14 @@ Write the function `def train(X_train, Y_train, X_valid, Y_valid, layer_sizes, a
   - `forward_prop = __import__('2-forward_prop').forward_prop`
 - You are not allowed to use `tf.saved_model`
 - Returns: the path where the model was saved
+
+### 7. Evaluate
+
+Write the function `def evaluate(X, Y, save_path)`: that evaluates the output of a neural network:
+
+- Main file: `7-main.py`
+- `X` is a `numpy.ndarray` containing the input data to evaluate
+- `Y` is a `numpy.ndarray` containing the one-hot labels for `X`
+- `save_path` is the location to load the model from
+- You are not allowed to use `tf.saved_model`
+- Returns: the network’s prediction, accuracy, and loss, respectively
