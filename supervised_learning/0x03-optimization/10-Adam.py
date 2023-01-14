@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Updates a variable using the Adam optimization algorithm with tensorflow
+Module with task 10. Adam Upgraded
 """
 import tensorflow.compat.v1 as tf
 
