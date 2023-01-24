@@ -36,6 +36,7 @@ def dropout_forward_prop(X, weights, L, keep_prob):
             A *= D
             A /= keep_prob
             cache["D" + str(layer + 1)] = D
-            cache["A" + str(layer + 1)] = A
+
+        cache["A" + str(layer + 1)] = A
 
     return cache
