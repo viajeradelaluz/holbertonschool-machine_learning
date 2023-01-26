@@ -38,8 +38,12 @@ def train_model(
 
     :return: the History object generated after training the model
     """
+
+    def scheduler(epoch):
+        """Updates the learning rate using inverse time decay"""
+        return alpha / (1 + decay_rate * epoch)
+
     callbacks = []
-    scheduler = lambda epoch: alpha / (1 + decay_rate * epoch)
 
     if validation_data:
         if early_stopping:
