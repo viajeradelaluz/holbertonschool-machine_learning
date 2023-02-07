@@ -55,9 +55,11 @@ def lenet5(x, y):
     connected_layer_1 = tf.layers.Dense(
         units=120, activation="relu", kernel_initializer=init
     )(flatten)
+    
     connected_layer_2 = tf.layers.Dense(
         units=84, activation="relu", kernel_initializer=init
     )(connected_layer_1)
+    
     connected_layer_3 = tf.layers.Dense(
         units=10, activation=None, kernel_initializer=init
     )(connected_layer_2)
