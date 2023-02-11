@@ -22,7 +22,6 @@ def inception_network():
 
     X = K.Input(shape=(224, 224, 3))
     convolution, max_pool = K.layers.Conv2D, K.layers.MaxPool2D
-    inception = inception_block
 
     # Convolution values: (filters, kernel_size, strides, padding)
     cvalues = ((64, 7, 2, "same"), (192, 3, 1, "same"))
@@ -36,19 +35,19 @@ def inception_network():
     conv_2 = convolution(*cvalues[1], activation="relu")(pool_1)
     pool_2 = max_pool(*pvalues[0])(conv_2)
 
-    incept_3a = inception(pool_2, filters=[64, 96, 128, 16, 32, 32])
-    incept_3b = inception(incept_3a, filters=[128, 128, 192, 32, 96, 64])
+    incept_3a = inception_block(pool_2, [64, 96, 128, 16, 32, 32])
+    incept_3b = inception_block(incept_3a, [128, 128, 192, 32, 96, 64])
     pool_3 = max_pool(*pvalues[0])(incept_3b)
 
-    incept_4a = inception(pool_3, filters=[192, 96, 208, 16, 48, 64])
-    incept_4b = inception(incept_4a, filters=[160, 112, 224, 24, 64, 64])
-    incept_4c = inception(incept_4b, filters=[128, 128, 256, 24, 64, 64])
-    incept_4d = inception(incept_4c, filters=[112, 144, 288, 32, 64, 64])
-    incept_4e = inception(incept_4d, filters=[256, 160, 320, 32, 128, 128])
+    incept_4a = inception_block(pool_3, [192, 96, 208, 16, 48, 64])
+    incept_4b = inception_block(incept_4a, [160, 112, 224, 24, 64, 64])
+    incept_4c = inception_block(incept_4b, [128, 128, 256, 24, 64, 64])
+    incept_4d = inception_block(incept_4c, [112, 144, 288, 32, 64, 64])
+    incept_4e = inception_block(incept_4d, [256, 160, 320, 32, 128, 128])
     pool4 = max_pool(*pvalues[0])(incept_4e)
 
-    incept_5a = inception(pool4, filters=[256, 160, 320, 32, 128, 128])
-    incept_5b = inception(incept_5a, filters=[384, 192, 384, 48, 128, 128])
+    incept_5a = inception_block(pool4, [256, 160, 320, 32, 128, 128])
+    incept_5b = inception_block(incept_5a, [384, 192, 384, 48, 128, 128])
 
     avg_pool = K.layers.AveragePooling2D(*pvalues[1])(incept_5b)
     dropout = K.layers.Dropout(rate=0.4)(avg_pool)
